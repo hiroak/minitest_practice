@@ -1,0 +1,28 @@
+require 'test_helper'
+
+class MinitestPracticeTest < Minitest::Test
+  def setup
+	@main = ::MinitestPractice::Main.new
+  end
+
+  def test_that_it_has_a_version_number
+    refute_nil ::MinitestPractice::VERSION
+  end
+
+  def test_odd?
+    assert @main.odd?(1), '1 is odd'
+    refute @main.odd?(2), '2 is not odd'
+    assert @main.odd?(3), '3 is odd'
+    refute @main.odd?(4), '4 is not odd'
+    assert @main.odd?(11), '11 is odd'
+    refute @main.odd?(20), '20 is no odd'
+  end
+
+  def check_number?
+    assert @main.check_number?(2222), '2222 is true'
+    assert @main.check_number?(2223), '2223 is false'
+    refute @main.check_number?(222), '222 is false'
+    refute @main.check_number?(0222), '0222 is false'
+    refute @main.check_number?(22222), '22222 is false'
+  end
+end
