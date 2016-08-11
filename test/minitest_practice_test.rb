@@ -10,12 +10,13 @@ class MinitestPracticeTest < Minitest::Test
   end
 
   def test_odd?
-    assert @main.odd?(1), '1 is odd'
-    refute @main.odd?(2), '2 is not odd'
+    assert @main.odd?(-1001), '-1001 is odd'
+    refute @main.odd?(-1000), '-1000 is not odd'
+    refute @main.odd?(0), '0 is not odd'
     assert @main.odd?(3), '3 is odd'
     refute @main.odd?(4), '4 is not odd'
-    assert @main.odd?(11), '11 is odd'
-    refute @main.odd?(20), '20 is not odd'
+    refute @main.odd?(1000), '1000 is not odd'
+    assert @main.odd?(1001), '1001 is odd'
   end
 
   def test_check_number?
